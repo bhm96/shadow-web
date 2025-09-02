@@ -14,7 +14,7 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   
   <!-- CSS personalizado -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.css" />
   
   <script>
     tailwind.config = {
@@ -33,10 +33,219 @@
 </head>
 <body class="bg-darker text-gray-100 font-sans antialiased">
 
-  <!-- ✅ Aquí pega TODO tu contenido original (Navbar, Hero, Services, About, Contacto, Footer) -->
-  <!-- 👆 del archivo index.html inicial, sin el <style> ni el <script> final -->
+  <!-- Navbar -->
+    <nav class="fixed w-full bg-dark/90 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L4 7V17L12 22L20 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 22V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20 7L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 7L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 5L7 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 14L17 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-white">SHADOW</span>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-primary px-3 py-2 rounded-md text-sm font-medium hover:text-primary/80 transition">Inicio</a>
+                        <a href="#services" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">Servicios</a>
+                        <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">Quiénes Somos</a>
+                        <a href="#contact" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition">Contacto</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-300 hover:text-white focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="menu-button">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-primary block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#services" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Servicios</a>
+                <a href="#about" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Quiénes Somos</a>
+                <a href="#contact" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Protegemos lo que más importa: <br>
+                <span class="gradient-text">tu información</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+                Soluciones avanzadas de ciberseguridad para proteger tu negocio en el mundo digital.
+            </p>
+            <a href="https://wa.me/1234567890" target="_blank" class="inline-flex items-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition transform hover:-translate-y-1">
+                <i data-feather="message-circle" class="mr-2"></i> Contactar por WhatsApp
+            </a>
+        </div>
+        <div class="mt-20 flex justify-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative w-full max-w-4xl">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary to-purple-500 rounded-xl opacity-20 blur-2xl"></div>
+                <div class="relative bg-dark/50 border border-gray-800 rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cybersecurity" class="w-full h-auto opacity-70">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-dark/50">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Nuestros Servicios</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Soluciones especializadas para proteger tu organización contra amenazas cibernéticas.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="bg-dark/80 border border-gray-800 rounded-xl p-8 hover:border-primary/50 transition" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                    <i data-feather="search" class="text-primary w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Análisis Forense Digital</h3>
+                <p class="text-gray-400">
+                    Investigación profesional de incidentes de seguridad para identificar vulnerabilidades y recuperar datos comprometidos.
+                </p>
+            </div>
+            <!-- Service 2 -->
+            <div class="bg-dark/80 border border-gray-800 rounded-xl p-8 hover:border-primary/50 transition" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                    <i data-feather="shield" class="text-primary w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Ciberseguridad Empresarial</h3>
+                <p class="text-gray-400">
+                    Protección integral para tu empresa con soluciones adaptadas a tus necesidades específicas.
+                </p>
+            </div>
+            <!-- Service 3 -->
+            <div class="bg-dark/80 border border-gray-800 rounded-xl p-8 hover:border-primary/50 transition" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                    <i data-feather="lock" class="text-primary w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Consultoría en Protección de Datos</h3>
+                <p class="text-gray-400">
+                    Cumplimiento normativo y estrategias para garantizar la privacidad y seguridad de los datos sensibles.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Quiénes Somos</h2>
+                <p class="text-gray-400 mb-6">
+                    En SHADOW nos especializamos en proporcionar soluciones de ciberseguridad de vanguardia. Nuestro equipo de expertos cuenta con más de 15 años de experiencia protegiendo organizaciones contra amenazas digitales.
+                </p>
+                <p class="text-gray-400 mb-6">
+                    Creemos en un enfoque proactivo de la seguridad, identificando vulnerabilidades antes de que sean explotadas y preparando a nuestros clientes para los desafíos del panorama digital actual.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex items-center">
+                        <i data-feather="check-circle" class="text-primary mr-2"></i>
+                        <span class="text-gray-300">Certificaciones internacionales</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="check-circle" class="text-primary mr-2"></i>
+                        <span class="text-gray-300">Equipo multidisciplinario</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="check-circle" class="text-primary mr-2"></i>
+                        <span class="text-gray-300">Soporte 24/7</span>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-purple-500 rounded-xl opacity-20 blur-2xl"></div>
+                    <div class="relative bg-dark/50 border border-gray-800 rounded-xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Team" class="w-full h-auto opacity-90">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-dark/50">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Contacto</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Ponte en contacto con nuestro equipo para una consulta sin compromiso.
+            </p>
+        </div>
+        <div class="max-w-2xl mx-auto" data-aos="fade-up">
+            <form action="https://formspree.io/f/myyqjzrj" method="POST" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nombre</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-dark border border-gray-700 rounded-lg form-input focus:border-primary focus:ring-primary" placeholder="Tu nombre">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-dark border border-gray-700 rounded-lg form-input focus:border-primary focus:ring-primary" placeholder="tu@email.com">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-dark border border-gray-700 rounded-lg form-input focus:border-primary focus:ring-primary" placeholder="Cuéntanos cómo podemos ayudarte"></textarea>
+                </div>
+                <button type="submit" class="w-full px-6 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition">
+                    Enviar Mensaje
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-12 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L4 7V17L12 22L20 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 22V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20 7L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 7L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 5L7 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 14L17 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-white">SHADOW</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="facebook"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p>© 2025 SHADOW Ciberseguridad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
   <!-- Scripts -->
-  <script src="js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
