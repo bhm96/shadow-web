@@ -26,3 +26,49 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Reemplazar iconos feather
 feather.replace();
+
+// ==============================
+// Manejo seguro de formulario (Formsubmit)
+// ==============================
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const formMessage = document.getElementById("formMessage");
+
+  // Validación básica
+  if (!name || !email || !message) {
+    formMessage.textContent = "⚠️ Por favor completa todos los campos.";
+    formMessage.className = "text-red-500 text-sm mt-4";
+    return;
+  }
+
+  // Validar email con expresión regular
+  const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  if (!emailRegex.test(email)) {
+    formMessage.textContent = "⚠️ Ingresa un correo válido.";
+    formMessage.className = "text-red-500 text-sm mt-4";
+    return;
+  }
+
+  // Enviar datos a Formsubmit
+  try {
+    const response = await fetch(e.target.action, {
+      method: "POST",
+      body: new FormData(e.target),
+    });
+
+    if (response.ok) {
+      // Redirigir a página de gracias
+      window.location.href = "gracias.html";
+    } else {
+      formMessage.textContent = "❌ Hubo un problema al enviar. Intenta de nuevo.";
+      formMessage.className = "text-red-500 text-sm mt-4";
+    }
+  } catch (error) {
+    formMessage.textContent = "❌ Error de conexión. Revisa tu internet.";
+    formMessage.className = "text-red-500 text-sm mt-4";
+  }
+});
