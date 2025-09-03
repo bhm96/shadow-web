@@ -46,7 +46,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
   }
 
   // Validar email con expresión regular
-  const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     formMessage.textContent = "⚠️ Ingresa un correo válido.";
     formMessage.className = "text-red-500 text-sm mt-4";
