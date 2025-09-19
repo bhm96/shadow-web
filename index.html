@@ -215,7 +215,14 @@
                   <label for="message" class="block text-sm font-medium text-gray-300">Mensaje</label>
                   <textarea name="message" id="message" rows="4" required class="form-input mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white"></textarea>
                 </div>
-
+                <!-- ✅ Consentimiento obligatorio -->
+                <label class="flex items-start text-sm text-gray-300 mt-4">
+                  <input type="checkbox" id="consent" name="consent" required
+                         class="mt-1 mr-2 form-checkbox">
+                  Acepto el <a href="privacy.html" target="_blank" class="text-cyan-300 underline ml-1">
+                    Aviso de Privacidad
+                  </a>.
+                </label>
                 <!-- Botón -->
                 <div>
                   <button type="submit" class="w-full px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition">
