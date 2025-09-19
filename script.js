@@ -4,7 +4,13 @@ AOS.init({
   easing: 'ease-in-out',
   once: true
 });
-
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  const consent = document.getElementById("consent");
+  if (!consent.checked) {
+    e.preventDefault();
+    alert("Debes aceptar el Aviso de Privacidad para enviar el formulario.");
+  }
+});
 // Botón menú móvil
 document.getElementById('menu-button').addEventListener('click', function() {
   const menu = document.getElementById('mobile-menu');
